@@ -1,23 +1,132 @@
 [
   {
-    "id": 1,
-    "username": "user1",
-    "email": "user1@example.com",
-    "firstName": "John",
-    "lastName": "Doe"
+    "specialization": [
+      {
+        "id": 1,
+        "name": "Strength Training"
+      },
+      {
+        "id": 2,
+        "name": "Cardio"
+      }
+    ],
+    "userId": 11
   },
   {
-    "id": 2,
-    "username": "user2",
-    "email": "user2@example.com",
-    "firstName": "Alice",
-    "lastName": "Smith"
+    "specialization": [
+      {
+        "id": 3,
+        "name": "Yoga"
+      },
+      {
+        "id": 4,
+        "name": "Pilates"
+      }
+    ],
+    "userId": 12
   },
   {
-    "id": 3,
-    "username": "user3",
-    "email": "user3@example.com",
-    "firstName": "Bob",
-    "lastName": "Johnson"
+    "specialization": [
+      {
+        "id": 5,
+        "name": "Boxing"
+      },
+      {
+        "id": 6,
+        "name": "CrossFit"
+      }
+    ],
+    "userId": 13
+  },
+  {
+    "specialization": [
+      {
+        "id": 7,
+        "name": "Circuit Training"
+      },
+      {
+        "id": 8,
+        "name": "Weightlifting"
+      }
+    ],
+    "userId": 14
+  },
+  {
+    "specialization": [
+      {
+        "id": 9,
+        "name": "Swimming"
+      },
+      {
+        "id": 10,
+        "name": "Running"
+      }
+    ],
+    "userId": 15
+  },
+  {
+    "specialization": [
+      {
+        "id": 1,
+        "name": "Strength Training"
+      },
+      {
+        "id": 10,
+        "name": "Running"
+      }
+    ],
+    "userId": 16
+  },
+  {
+    "specialization": [
+      {
+        "id": 2,
+        "name": "Cardio"
+      },
+      {
+        "id": 9,
+        "name": "Swimming"
+      }
+    ],
+    "userId": 17
+  },
+  {
+    "specialization": [
+      {
+        "id": 3,
+        "name": "Yoga"
+      },
+      {
+        "id": 8,
+        "name": "Weightlifting"
+      }
+    ],
+    "userId": 18
+  },
+  {
+    "specialization": [
+      {
+        "id": 4,
+        "name": "Pilates"
+      },
+      {
+        "id": 7,
+        "name": "Circuit Training"
+      }
+    ],
+    "userId": 19
+  },
+  {
+    "specialization": [
+      {
+        "id": 5,
+        "name": "Boxing"
+      },
+      {
+        "id": 2,
+        "name": "Cardio"
+      }
+    ],
+    "userId": 20
   }
 ]

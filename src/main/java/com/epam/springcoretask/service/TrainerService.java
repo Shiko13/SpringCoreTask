@@ -1,19 +1,24 @@
 package com.epam.springcoretask.service;
 
-import com.epam.springcoretask.model.Trainee;
+import com.epam.springcoretask.model.Trainer;
+import com.epam.springcoretask.model.dto.TrainerDto;
 
+import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
-public interface TraineeService {
+public interface TrainerService {
 
-    Optional<Trainee> get(Long id);
+    TrainerDto getById(Long id);
 
-    List<Trainee> getAll();
+    Collection<TrainerDto> getAll();
 
-    void save(Trainee trainee);
+    TrainerDto save(Trainer trainer);
 
-    void update(Trainee trainee);
+    TrainerDto update(Trainer trainer);
 
-    void delete(Trainee trainee);
+    void delete(Long id);
+
+    void clearData();
+
+    void initializeData(List<Trainer> trainerData);
 }
