@@ -16,9 +16,11 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class TrainingTypeServiceImpl implements TrainingTypeService {
+public class TrainingTypeServiceImpl implements TrainingTypeService, DataService<TrainingType> {
 
     private final TrainingTypeDao trainingTypeDao;
+
+    private final static String PATH = "data/training-type-data.json";
 
     @Override
     public TrainingTypeDto getById(Long id) {
@@ -53,5 +55,15 @@ public class TrainingTypeServiceImpl implements TrainingTypeService {
     public void initializeData(List<TrainingType> trainingTypeData) {
         log.info("Initialize trainingTypeData");
         trainingTypeDao.initializeData(trainingTypeData);
+    }
+
+    @Override
+    public Class<TrainingType> getDataType() {
+        return TrainingType.class;
+    }
+
+    @Override
+    public String getDataPath() {
+        return PATH;
     }
 }

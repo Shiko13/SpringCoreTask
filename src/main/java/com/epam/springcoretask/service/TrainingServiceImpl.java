@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class TrainingServiceImpl implements TrainingService {
+public class TrainingServiceImpl implements TrainingService, DataService<Training> {
 
     private final TrainingDao trainingDao;
 
@@ -41,6 +41,7 @@ public class TrainingServiceImpl implements TrainingService {
     private final Map<Long, User> userStorage;
 
     private final Map<Long, TrainingType> trainingTypeStorage;
+    private final static String PATH = "data/training-data.json";
 
     @Override
     public TrainingDto getById(Long id) {
@@ -75,6 +76,16 @@ public class TrainingServiceImpl implements TrainingService {
     public void initializeData(List<Training> trainingData) {
         log.info("Initialize trainingData");
         trainingDao.initializeData(trainingData);
+    }
+
+    @Override
+    public Class<Training> getDataType() {
+        return Training.class;
+    }
+
+    @Override
+    public String getDataPath() {
+        return PATH;
     }
 
     private TrainingDto createTrainingDto(Training training) {

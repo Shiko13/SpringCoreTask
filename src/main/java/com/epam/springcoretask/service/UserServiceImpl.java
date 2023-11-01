@@ -16,9 +16,11 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, DataService<User> {
 
     private final UserDao userDao;
+
+    private final static String PATH = "data/user-data.json";
 
     @Override
     public UserDto getById(Long id) {
@@ -55,4 +57,13 @@ public class UserServiceImpl implements UserService {
         userDao.initializeData(userData);
     }
 
+    @Override
+    public Class<User> getDataType() {
+        return User.class;
+    }
+
+    @Override
+    public String getDataPath() {
+        return PATH;
+    }
 }

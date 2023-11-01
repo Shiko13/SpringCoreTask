@@ -20,11 +20,12 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class TraineeServiceImpl implements TraineeService {
+public class TraineeServiceImpl implements TraineeService, DataService<Trainee> {
 
     private final TraineeDao traineeDao;
 
     private final Map<Long, User> userStorage;
+    private final static String PATH = "data/trainee-data.json";
 
     @Override
     public TraineeDto getById(Long id) {
@@ -72,6 +73,16 @@ public class TraineeServiceImpl implements TraineeService {
     public void initializeData(List<Trainee> traineeData) {
         log.info("Initialize traineeData");
         traineeDao.initializeData(traineeData);
+    }
+
+    @Override
+    public Class<Trainee> getDataType() {
+        return Trainee.class;
+    }
+
+    @Override
+    public String getDataPath() {
+        return PATH;
     }
 
     private TraineeDto createTraineeDto(Trainee trainee) {
